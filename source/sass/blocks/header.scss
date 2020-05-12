@@ -1,0 +1,255 @@
+.header {
+  @include background('header', 'jpg', $dark, 'true');
+  min-height: 720px;
+  padding-top: 40px;
+  padding-bottom: 60px;
+  background-size: cover;
+  color: $light_1;
+}
+
+.header__inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  >*:not(:first-child) {
+    margin-left: 23px;
+  }
+}
+
+.header__box {
+  display: flex;
+  width: 100%;
+  max-width: 922px;
+}
+
+.header__title {
+  @include font(18);
+  flex-grow: 1;
+  text-align: center;
+  align-self: flex-end;
+  margin: 0;
+  margin-right: 39px;
+  padding-bottom: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.header__date {
+  @include font(18);
+  margin-bottom: 64px;
+  font-weight: 600;
+}
+
+.header__subtitle {
+  @include main_title;
+  @include max_width(750);
+  margin: 0;
+  margin-bottom: 13px;
+  color: $accent_1;
+  text-transform: uppercase;
+  letter-spacing: $ls_01;
+}
+
+.header__desc {
+  @include font(24);
+  @include max_width(750);
+  margin: 0;
+  margin-bottom: 62px;
+  letter-spacing: $ls_01;
+}
+
+.header__form {
+  @include max_width(750);
+  margin-right: 0;
+}
+
+.header__form form {
+  @include max_width(750);
+  display: flex;
+  flex-direction: column;
+
+  &>[type="checkbox"] {
+    @include visually_hidden;
+  }
+
+  &>label {
+    @include font(12);
+    font-style: italic;
+    color: $light_2;
+    letter-spacing: $minus*$ls_025;
+    transform: translate(-15px);
+
+    a {
+      color: $light_2;
+      transition: $transition;
+
+      &:active {
+        color: $accent_1;
+        opacity: $opacity;
+      }
+    }
+  }
+}
+
+.header__form_inner {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 16px;
+
+  button {
+    @include button;
+    width: 100%;
+    max-width: 264px;
+    padding: 17px 21px 15px;
+    font-size: 15px;
+    line-height: 18px;
+    font-weight: 500;
+    text-align: center;
+    text-transform: uppercase;
+    color: $white;
+    background-color: $accent_2;
+    border-radius: $br_35;
+    transition: $transition;
+
+    &:active {
+      opacity: $opacity;
+    }
+  }
+}
+
+.header__form_email {
+  position: relative;
+  width: 100%;
+  max-width: 262px;
+  margin-right: 30px;
+
+  input {
+    @include font(15);
+    width: 100%;
+    min-height: 50px;
+    padding: 10px 21px;
+    font-family: "Lato", "Arial", sans-serif;
+    font-weight: 300;
+    color: $black;
+    outline: none;
+    appearance: none;
+    border: none;
+    border-radius: $br_35;
+    transition: $transition;
+    text-transform: uppercase;
+  }
+
+  input::placeholder {
+    @include font(15);
+    opacity: 1;
+    color: rgba($dark, 0.5);
+    transition: $transition;
+  }
+
+  input:focus {
+    &::placeholder {
+      opacity: 0;
+    }
+  }
+
+  span {
+    @include font(12);
+    position: absolute;
+    width: 100%;
+    top: -20px;
+    left: 20px;
+    text-align: left;
+    color: $accent_2;
+    font-weight: 700;
+  }
+}
+
+@media (max-width: $mobile_max) {
+  .header {
+    padding-bottom: 90px;
+  }
+
+  .header__inner {
+    >*:not(:first-child) {
+      margin-left: 0;
+    }
+  }
+
+  .header__box {
+    flex-direction: column;
+  }
+
+  .header__title {
+    margin: 27px 18%;
+    padding-right: 3px;
+    margin-bottom: 0;
+  }
+
+  .header__date {
+    margin-bottom: 53px;
+    padding-left: 5px;
+  }
+
+  .header__subtitle {
+    margin-bottom: 14px;
+    padding-left: 5px;
+  }
+
+  .header__desc {
+    width: 72.7%;
+    margin-bottom: 47px;
+  }
+
+  .header__form_email {
+    margin: 0 auto;
+    margin-bottom: 15px;
+  }
+
+  .header__form_inner {
+    margin-bottom: 15px;
+  }
+
+  .header__form form>label {
+    transform: none;
+    width: 55%;
+    align-self: center;
+    text-align: initial;
+
+  }
+}
+
+@media (max-width: $mobile_extra) {
+
+  .header__title,
+  .header__date {
+    @include font(15);
+  }
+
+  .header__desc {
+    @include font(18);
+  }
+}
+
+@media (min-width: $no_mobile) {
+  .header__form_inner {
+
+    button:hover,
+    button:focus {
+      background-color: darken($accent_2, 5);
+    }
+  }
+
+  .header__form form>label {
+
+    a:hover,
+    a:focus {
+      color: $accent_1;
+    }
+  }
+}
+

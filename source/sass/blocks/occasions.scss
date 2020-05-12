@@ -1,0 +1,11 @@
+.occasions {
+  padding-top: 73px;
+  padding-bottom: 1px;
+}
+
+@media (max-width: $mobile_max) {
+  .occasions {
+    padding-top: 50px;
+    padding-bottom: 25px;
+  }
+}

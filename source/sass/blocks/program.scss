@@ -1,0 +1,13 @@
+.program {
+  z-index: 1;
+  padding-top: 70px;
+  margin-bottom: -86px;
+}
+
+.program__inner {
+  @include max_width(752);
+  border: 3px solid $accent_1;
+  border-radius: $br_10;
+  background-color: $white;
+  transform: translateX(10px);
+}

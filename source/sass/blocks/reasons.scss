@@ -1,0 +1,139 @@
+.reasons {
+  background-color: $background_1;
+  padding-top: 86px;
+  padding-bottom: 43px;
+}
+
+.reasons__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 73px;
+  padding-left: 25px;
+  padding-right: 10px;
+}
+
+.reasons__title {
+  @include max_width(577);
+  padding-left: 8px;
+  margin-bottom: 56px;
+}
+
+.reasons__list {
+  @include list;
+  max-width: 1151px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-right: -14px;
+  margin-left: 8px;
+  margin-bottom: 11px;
+
+  li {
+    position: relative;
+    width: 100%;
+    max-width: 358px;
+    text-align: center;
+    padding: 18px 15px;
+    margin-bottom: 19px;
+
+    &::before,
+    &::after {
+      position: absolute;
+      content: "";
+      display: flex;
+      background-color: $accent_1;
+    }
+
+    &::before {
+      top: 0;
+      left: 0;
+      height: 1px;
+      width: 100%;
+    }
+
+    &::after {
+      top: -7.5px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 15px;
+      height: 15px;
+      border-radius: $br_05;
+    }
+
+    &.reasons__item--first {
+      &::after {
+        left: calc(50% - 13px);
+      }
+    }
+
+    &.reasons__item--another {
+      margin-right: 15px;
+    }
+
+    &.reasons__item--small {
+      max-width: 261px;
+    }
+
+    &:not(.reasons__item--small)+.reasons__item--small {
+      margin-left: 6.6%;
+
+      &+.reasons__item--small {
+        margin-right: 8%;
+      }
+    }
+  }
+}
+
+.reasons__link {
+  transform: translateX(4px);
+}
+
+@media (max-width: $tablet_max) {
+  .reasons__inner {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .reasons__list {
+    margin: 0;
+
+    li {
+      &.reasons__item--first {
+        &::after {
+          left: 50%;
+        }
+      }
+
+      &.reasons__item--another {
+        margin-right: 0;
+      }
+
+      &.reasons__item--small {
+        max-width: 358px;
+      }
+
+      &:not(.reasons__item--small)+.reasons__item--small {
+        margin-left: 0;
+
+        &+.reasons__item--small {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $mobile_max) {
+  .reasons__list {
+    margin: 0;
+
+    li {
+      max-width: 100%;
+
+      &.reasons__item--small {
+        max-width: 100%;
+      }
+    }
+  }
+}

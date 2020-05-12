@@ -1,0 +1,17 @@
+.title {
+  margin: 0;
+  font-size: $size_30;
+  line-height: $height_36;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: $ls_01;
+}
+
+.title--no_uppercase {
+  text-transform: none;
+}
+
+@media (max-width: $mobile_max) {
+  @include font(24);
+}

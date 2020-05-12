@@ -1,0 +1,39 @@
+.promo {
+  @include background('promo', 'jpg', $dark, 'false');
+  background-size: cover;
+  color: $accent_1;
+  min-height: 376px;
+  padding-top: 83px;
+  padding-bottom: 75px;
+}
+
+.promo__inner {
+  @include max_width(944);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.promo__desc {
+  @include font(24);
+  @include max_width(944);
+  margin: 0;
+  margin-left: 16px;
+  margin-bottom: 37px;
+  text-align: center;
+  letter-spacing: $ls_02;
+}
+
+.promo__link {
+  margin-left: 21px;
+}
+
+@media (max-width: $mobile_max) {
+  .promo {
+    padding-top: 30px;
+  }
+
+  .promo__desc {
+    margin: 25px 10%;
+  }
+}

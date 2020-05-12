@@ -1,0 +1,47 @@
+.reviews {
+  padding-top: 42px;
+  padding-bottom: 126px;
+  background-color: $background_2;
+}
+
+.reviews__inner {
+  display: flex;
+  flex-direction: column;
+  margin-top: 63px;
+  max-width: 1102px;
+  padding-left: 42px;
+  padding-right: 20px;
+}
+
+.reviews__title {
+  text-indent: -14px;
+}
+
+.reviews__slider {
+  overflow: hidden;
+  padding: 47px;
+}
+
+.reviews__link {
+  margin-top: -18px;
+  align-self: center;
+}
+
+@media (max-width: $mobile_max) {
+  .reviews {
+    padding-bottom: 60px;
+  }
+
+  .reviews__inner {
+    padding: 0;
+    margin-top: 30px;
+  }
+
+  .reviews__title {
+    padding: 0 20px;
+  }
+
+  .reviews__slider {
+    padding: 20px;
+  }
+}

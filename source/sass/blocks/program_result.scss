@@ -1,0 +1,55 @@
+.program_result__title {
+  padding: 13px 0 7px;
+  color: $white;
+  background-color: $accent_1;
+  text-indent: 28px;
+}
+
+.program_result__items {
+  @include list;
+  @include max_width(662);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  counter-reset: myCounter;
+  padding: 41px 10px;
+  padding-bottom: 34px;
+  padding-right: 3%;
+
+  li {
+    @include font(18);
+    display: flex;
+    position: relative;
+    padding-left: 59px;
+    margin-bottom: 22px;
+
+    &::before {
+      @include font(24);
+      position: absolute;
+      counter-increment: myCounter;
+      content: counter(myCounter);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 40px;
+      height: 40px;
+      left: 0;
+      top: 0;
+      font-weight: 700;
+      color: $white;
+      z-index: 3;
+    }
+
+    &::after {
+      position: absolute;
+      content: "";
+      display: block;
+      left: 0;
+      top: -1px;
+      width: 40px;
+      height: 40px;
+      background-color: $accent_1;
+      border-radius: $br_05;
+    }
+  }
+}

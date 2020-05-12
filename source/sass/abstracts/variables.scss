@@ -1,0 +1,64 @@
+// sizes
+$mobile_min: 320px;
+$mobile_extra: 479px;
+$mobile_max: 768px;
+$tablet_max: 1200px;
+$desktop_max: 1180px;
+$no_mobile: 769px;
+
+// color scheme
+$white: #ffffff;
+$light_1: #E5E5E5;
+$light_2: #EDD9D9;
+$light_3: #BDC8D9;
+$accent_1: #DDA859;
+$accent_2: #DB0707;
+$accent_3: #714271;
+$accent_4: #765F7D;
+$accent_5: #9A2069;
+$accent_6: #EC2808;
+$background_1: #FFF8EF;
+$background_2: #F4E4F9;
+$dark: #2A1431;
+$black: #000000;
+
+// fonts size
+$size_12: 12px;
+$size_14: 14px;
+$size_15: 15px;
+$size_16: 16px;
+$size_18: 18px;
+$size_24: 24px;
+$size_30: 30px;
+$size_40: 40px;
+$size_60: 60px;
+
+$height_14: 14px;
+$height_17: 17px;
+$height_18: 18px;
+$height_19: 19px;
+$height_22: 22px;
+$height_29: 29px;
+$height_36: 36px;
+$height_48: 48px;
+$height_72: 72px;
+
+// another
+$transition: all 0.3s;
+$opacity: 0.87;
+$shadow: 0 0 30px rgba($black, 0.15);
+$px: 0px;
+$minus: -1;
+
+$br_05: 50%;
+$br_10: 10px;
+$br_35: 35px;
+
+$ls_01: 0.1px;
+$ls_02: 0.2px;
+$ls_07:0.7px;
+$ls_025: 0.25px;
+
+// retina
+$retina_dpi: 144dpi;
+$retina_dppx: 1.5dppx;

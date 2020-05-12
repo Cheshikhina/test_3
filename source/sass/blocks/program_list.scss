@@ -1,0 +1,41 @@
+.program_list {
+  padding: 41px 10px;
+  padding-bottom: 38px;
+}
+
+.program_list__title {
+  margin-bottom: 38px;
+}
+
+.program_list__items {
+  @include list;
+  @include max_width(612);
+  display: flex;
+  flex-direction: column;
+
+  li {
+    @include font(18);
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 22px;
+
+    &::before {
+      position: absolute;
+      content: "";
+      display: block;
+      left: 0;
+      top: 5px;
+      width: 10px;
+      height: 10px;
+      background-color: $accent_1;
+      border-radius: $br_05;
+    }
+  }
+}
+
+.program_list__text {
+  @include max_width(612);
+  @include font(18);
+  margin-top: 8px;
+  font-weight: 700;
+}

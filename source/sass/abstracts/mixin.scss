@@ -1,0 +1,109 @@
+@mixin visually_hidden {
+  position: absolute;
+  width: 1px;
+  min-width: initial;
+  height: 1px;
+  min-height: initial;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  border: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
+}
+
+@mixin list {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+@mixin button {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+@mixin background($name, $type, $background_color, $is_mobile) {
+  @if $background_color !='false' {
+    background-color: $background_color;
+  }
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("../img/#{$name}__desktop@1x.#{$type}");
+
+  @media (min-resolution: $retina_dpi),
+  (min-resolution: $retina_dppx) {
+    background-image: url("../img/#{$name}__desktop@2x.#{$type}");
+  }
+
+  @media (max-width: $mobile_max) {
+    @if $is_mobile=='true' {
+      background-image: url("../img/#{$name}__mobile@1x.#{$type}");
+
+      @media (min-resolution: $retina_dpi),
+      (min-resolution: $retina_dppx) {
+        background-image: url("../img/#{$name}__mobile@2x.#{$type}");
+      }
+    }
+  }
+}
+
+@mixin font($size) {
+  @if $size==12 {
+    font-size: $size_12;
+    line-height: $height_14;
+  }
+
+  @if $size==14 {
+    font-size: $size_14;
+    line-height: $height_17;
+  }
+
+  @if $size==15 {
+    font-size: $size_15;
+    line-height: $height_18;
+  }
+
+  @if $size==16 {
+    font-size: $size_16;
+    line-height: $height_19;
+  }
+
+  @if $size==18 {
+    font-size: $size_18;
+    line-height: $height_22;
+  }
+
+  @if $size==24 {
+    font-size: $size_24;
+    line-height: $height_29;
+  }
+}
+
+@mixin main_title {
+  font-size: $size_60;
+  line-height: $height_72;
+
+  @media (max-width: $mobile_max) {
+    font-size: $size_40;
+    line-height: $height_48;
+  }
+
+  @media (max-width: $mobile_extra) {
+    font-size: $size_30;
+    line-height: $height_36;
+  }
+}
+
+
+@mixin max_width($width) {
+  width: 100%;
+  max-width: $width+$px;
+  margin: 0 auto;
+}
